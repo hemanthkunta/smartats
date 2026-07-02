@@ -1,0 +1,21 @@
+Job Title: Data Scientist (Machine Learning)
+
+We are seeking a Data Scientist / Machine Learning Engineer with 3+ years of experience to build predictive models and analyze complex datasets.
+
+Requirements:
+- 3+ years of experience as a Data Scientist or ML Engineer
+- Strong proficiency in Python development
+- Solid foundation in Machine Learning concepts and algorithms
+- Hands-on experience with frameworks like TensorFlow or PyTorch
+- Experience querying databases using SQL
+- Proficiency with data manipulation libraries (Pandas, NumPy) and modeling tools (Scikit-Learn)
+- Master's or PhD degree in Computer Science, Statistics, Mathematics, or related field
+
+Nice to have:
+- Experience with Big Data tools (Spark, Hadoop)
+- Familiarity with deploying models in cloud environments
+
+Responsibilities:
+- Design, train, and deploy machine learning models to solve business problems
+- Clean, analyze, and visualize large datasets to extract actionable insights
+- Collaborate with software engineers to integrate model inference APIs

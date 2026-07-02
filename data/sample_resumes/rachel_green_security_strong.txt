@@ -1,0 +1,25 @@
+Rachel Green
+rachel.green@email.com | +91-9444455555 | Bangalore, India
+
+SUMMARY
+Security Engineer with 4 years of experience conducting penetration testing, vulnerability management, and implementing secure cloud and network architectures.
+
+SKILLS
+Linux, Git, Python, AWS, Docker, REST API, Communication, OWASP, Penetration Testing, IAM, Network Security
+
+EXPERIENCE
+Information Security Engineer — CyberGuard Technologies
+2022 - Present
+- Conducted regular penetration testing and vulnerability assessments, resolving 90% of OWASP Top 10 issues
+- Configured secure AWS cloud infrastructure, defining granular IAM policies and VPC security groups
+- Automated threat detection scanning using custom Python scripts integrated into the Git workflow
+- Acted as security lead, auditing microservices and REST APIs before release
+
+Security Analyst — SecureNet Inc
+2020 - 2022
+- Monitored intrusion detection systems on Linux servers and analyzed firewall security logs
+- Assisted in risk assessment audits and designed employee security awareness training
+- Documented and escalated incident response tickets in a timely manner
+
+EDUCATION
+B.Tech in Cybersecurity, Amrita University — 2020

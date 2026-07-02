@@ -1,0 +1,25 @@
+Amit Patel
+amit.patel@email.com | +91-9333366666 | Pune, India
+
+SUMMARY
+Mobile Developer with 4 years of experience designing and deploying high-performance native iOS and cross-platform React Native applications.
+
+SKILLS
+React, JavaScript, TypeScript, Git, REST API, HTML, CSS, Communication, Agile, Swift, Kotlin, Java, Mobile UI
+
+EXPERIENCE
+Senior Mobile Developer — AppVerse Studio
+2022 - Present
+- Architected and built a mobile marketplace application using React Native and Swift, reaching 100k+ downloads
+- Integrated secure REST APIs and third-party payment gateways, optimizing app response time by 25%
+- Designed custom responsive Mobile UI components complying with Apple Human Interface and Material Design guidelines
+- Led mobile development sprint planning within an Agile team structure and mentored junior coders
+
+Mobile App Developer — CodeNexus
+2020 - 2022
+- Developed native Android components using Java and Kotlin for a utility app
+- Managed code version control using Git and collaborated on backend API schema designs
+- Assisted in submitting and publishing apps to the Google Play Store and Apple App Store
+
+EDUCATION
+B.Tech in Computer Science, COEP Pune — 2020

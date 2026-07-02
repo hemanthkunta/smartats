@@ -1,0 +1,23 @@
+Rahul Verma
+rahul.verma@email.com | +91-9123456789 | Hyderabad, India
+
+SUMMARY
+Junior software developer with 1.5 years of experience, eager to grow in backend development.
+
+SKILLS
+Python, Flask, SQL, Git, HTML, CSS, JavaScript
+
+EXPERIENCE
+Software Developer Intern turned Full-Time — Webify Solutions
+2024 - Present
+- Worked on a small Flask-based internal tool for tracking employee attendance
+- Wrote SQL queries for reporting dashboards
+- Participated in daily stand-ups as part of an Agile team
+- Fixed bugs and added small features to an existing Django codebase
+
+EDUCATION
+B.Sc in Information Technology, Osmania University — 2024
+
+PROJECTS
+- Built a personal blog using Flask and SQLite
+- Built a to-do list app with HTML/CSS/JavaScript frontend

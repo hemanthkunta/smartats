@@ -1,0 +1,10 @@
+{
+    "slug": "frontend_react_developer",
+    "title": "Frontend React Developer",
+    "jd_text": "Job Title: Frontend React Developer\n\nWe are looking for a Frontend React Developer with 3+ years of experience to design and build rich, user-facing web applications.\n\nRequirements:\n- 3+ years of experience in Frontend web development\n- Strong proficiency in React, TypeScript, and ES6+ JavaScript\n- Deep understanding of HTML5, CSS3, Sass/SCSS, and modern responsive layout systems\n- Experience with Git version control and modern frontend build tools\n- Bachelor's degree in Computer Science, engineering, or related field\n- Strong communication and collaboration skills in an Agile environment\n\nNice to have:\n- Experience with state management systems like Redux or Zustand\n- Familiarity with REST APIs and GraphQL integrations\n- Exposure to UX/UI design principles\n\nResponsibilities:\n- Build reusable UI components and libraries for future use\n- Optimize frontend web assets for maximum speed and scalability\n- Collaborate with backend engineers to integrate REST/GraphQL APIs\n- Participate in design sprints, code reviews, and Agile team planning\n",
+    "mandatory_skills": [
+        "agile"
+    ],
+    "required_years": 3.0,
+    "required_degree": 3
+}

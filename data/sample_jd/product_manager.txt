@@ -1,0 +1,21 @@
+Job Title: Product Manager
+
+We are seeking a Product Manager with 3+ years of experience to lead product discovery and delivery for our web and mobile applications.
+
+Requirements:
+- 3+ years of product management or related experience
+- Proficient in writing product requirements and roadmapping
+- Experience with Agile development methodology and tools like Jira
+- Basic data analytics and querying skills (SQL preferred)
+- Strong user research and customer discovery skills
+- Excellent communication, presentation, and collaboration skills
+- Bachelor's or Master's degree in Business, CS, or related field
+
+Nice to have:
+- Experience in B2B SaaS
+- Basic understanding of web development technologies
+
+Responsibilities:
+- Define product vision, strategy, and detailed feature requirements
+- Prioritize the product backlog and collaborate with engineering and design teams
+- Conduct user research, market analysis, and analyze key metrics to guide decisions

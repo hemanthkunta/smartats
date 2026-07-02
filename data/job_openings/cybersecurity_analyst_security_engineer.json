@@ -1,0 +1,10 @@
+{
+    "slug": "cybersecurity_analyst_security_engineer",
+    "title": "Cybersecurity Analyst / Security Engineer",
+    "jd_text": "Job Title: Cybersecurity Analyst / Security Engineer\n\nWe are seeking a Security Engineer with 3+ years of experience to safeguard our networks, systems, and applications from cyber threats.\n\nRequirements:\n- 3+ years of experience in cybersecurity, security engineering, or systems security\n- Experience with penetration testing, vulnerability scanning, and risk assessment\n- Solid understanding of network security protocols and application security (OWASP Top 10)\n- Experience configuring Identity and Access Management (IAM) policies\n- Hands-on familiarity with Linux security auditing and log analysis\n- Proficiency in scripting languages (Python preferred) and version control (Git)\n- Bachelor's degree in Cybersecurity, Computer Science, or related field\n\nNice to have:\n- Security certifications like CISSP, CEH, or Security+\n- Experience securing cloud infrastructure (AWS)\n\nResponsibilities:\n- Identify and patch application vulnerabilities and infrastructure weaknesses\n- Monitor networks and systems for security incidents and lead threat response efforts\n- Design, build, and enforce security policies across the development lifecycle\n",
+    "mandatory_skills": [
+        "aws"
+    ],
+    "required_years": 3.0,
+    "required_degree": 3
+}

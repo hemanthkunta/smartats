@@ -1,0 +1,26 @@
+Vikram Singh
+vikram.singh@email.com | +91-9555544444 | Delhi, India
+
+SUMMARY
+Product Manager with 4 years of experience delivering customer-centric SaaS products, driving agile processes, and collaborating with cross-functional teams.
+
+SKILLS
+Project Management, Agile, SQL, Excel, Communication, Leadership, Power BI, Tableau, Product Roadmaps, Jira
+
+EXPERIENCE
+Product Manager — TechForge Solutions
+2022 - Present
+- Led the discovery, definition, and launch of a B2B analytics platform, increasing active user count by 35%
+- Managed the product backlog using Jira in an Agile environment with a team of 6 developers and 1 designer
+- Conducted 30+ user research sessions and analyzed metrics with SQL and Tableau to shape the product roadmap
+- Coordinated cross-functional teams to align marketing, engineering, and sales on release plans
+
+Associate Product Manager — RetailStream
+2020 - 2022
+- Managed feature requirements and wrote detailed user stories for e-commerce checkout updates
+- Used Excel and Power BI to analyze customer funnel performance, reducing checkout drop-off by 12%
+- Collaborated in daily stand-ups and sprint planning as part of an Agile team
+
+EDUCATION
+MBA in Product Management, FMS Delhi — 2020
+B.Tech in Computer Science, DTU — 2018

@@ -1,0 +1,25 @@
+Karan Mehta
+karan.mehta@email.com | +91-9000011111 | Mumbai, India
+
+SUMMARY
+Passionate Frontend Developer with 4 years of experience building beautiful, responsive, and performant web applications using React and TypeScript.
+
+SKILLS
+React, TypeScript, JavaScript, HTML5, CSS3, Sass, SCSS, Git, REST API, GraphQL, Agile, Communication, Redux, TailwindCSS
+
+EXPERIENCE
+Senior Frontend Developer — WebCraft Labs
+2022 - Present
+- Led the redesign of an enterprise dashboard using React and TypeScript, increasing page speed by 50%
+- Built a reusable component library using HTML5 and SCSS, reducing development time by 30%
+- Integrated GraphQL and REST APIs into front-end applications, managing state with Redux
+- Spearheaded Agile scrum planning meetings and mentored junior UI developers
+
+Frontend Engineer — TechSolutions Co.
+2020 - 2022
+- Developed responsive web interfaces using JavaScript (ES6+), CSS3, and HTML
+- Worked closely with UX designers to translate wireframes into clean, interactive layouts
+- Used Git for version control and participated in code review processes
+
+EDUCATION
+B.E in Computer Engineering, Mumbai University — 2020

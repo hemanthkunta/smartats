@@ -1,0 +1,25 @@
+Arjun Reddy
+arjun.reddy@email.com | +91-8888822222 | Hyderabad, India
+
+SUMMARY
+DevOps and Site Reliability Engineer with 5 years of experience building secure, highly scalable cloud infrastructure and CI/CD pipelines.
+
+SKILLS
+Docker, Kubernetes, AWS, Git, CI/CD, Linux, Python, Terraform, Prometheus, Grafana, Agile, Communication
+
+EXPERIENCE
+Lead DevOps Engineer — CloudSphere Solutions
+2022 - Present
+- Architected and managed production infrastructure on AWS using EC2, S3, and VPC, achieving 99.99% uptime
+- Containerized microservices using Docker and orchestrated deployments on Kubernetes clusters
+- Built and optimized automated CI/CD pipelines using GitLab CI, reducing deployment cycles by 40%
+- Directed a team of 3 systems engineers in transitioning legacy systems to cloud-native platforms
+
+DevOps Engineer — DeltaTech Industries
+2021 - 2022
+- Maintained and configured Linux servers across production and staging environments
+- Implemented Infrastructure as Code using Terraform to automate cloud provisioning
+- Collaborated in an Agile development team to troubleshoot and resolve environmental bottlenecks
+
+EDUCATION
+B.Tech in Information Technology, IIT Hyderabad — 2021

@@ -1,0 +1,10 @@
+{
+    "slug": "product_manager",
+    "title": "Product Manager",
+    "jd_text": "Job Title: Product Manager\n\nWe are seeking a Product Manager with 3+ years of experience to lead product discovery and delivery for our web and mobile applications.\n\nRequirements:\n- 3+ years of product management or related experience\n- Proficient in writing product requirements and roadmapping\n- Experience with Agile development methodology and tools like Jira\n- Basic data analytics and querying skills (SQL preferred)\n- Strong user research and customer discovery skills\n- Excellent communication, presentation, and collaboration skills\n- Bachelor's or Master's degree in Business, CS, or related field\n\nNice to have:\n- Experience in B2B SaaS\n- Basic understanding of web development technologies\n\nResponsibilities:\n- Define product vision, strategy, and detailed feature requirements\n- Prioritize the product backlog and collaborate with engineering and design teams\n- Conduct user research, market analysis, and analyze key metrics to guide decisions\n",
+    "mandatory_skills": [
+        "agile"
+    ],
+    "required_years": 3.0,
+    "required_degree": 4
+}

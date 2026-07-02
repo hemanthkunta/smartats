@@ -1,0 +1,21 @@
+Job Title: Cybersecurity Analyst / Security Engineer
+
+We are seeking a Security Engineer with 3+ years of experience to safeguard our networks, systems, and applications from cyber threats.
+
+Requirements:
+- 3+ years of experience in cybersecurity, security engineering, or systems security
+- Experience with penetration testing, vulnerability scanning, and risk assessment
+- Solid understanding of network security protocols and application security (OWASP Top 10)
+- Experience configuring Identity and Access Management (IAM) policies
+- Hands-on familiarity with Linux security auditing and log analysis
+- Proficiency in scripting languages (Python preferred) and version control (Git)
+- Bachelor's degree in Cybersecurity, Computer Science, or related field
+
+Nice to have:
+- Security certifications like CISSP, CEH, or Security+
+- Experience securing cloud infrastructure (AWS)
+
+Responsibilities:
+- Identify and patch application vulnerabilities and infrastructure weaknesses
+- Monitor networks and systems for security incidents and lead threat response efforts
+- Design, build, and enforce security policies across the development lifecycle

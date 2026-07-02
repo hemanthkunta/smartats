@@ -1,0 +1,29 @@
+Aditi Sharma
+aditi.sharma@email.com | +91-9876543210 | Bangalore, India
+
+SUMMARY
+Backend developer with 5 years of experience building scalable APIs and cloud-native services.
+
+SKILLS
+Python, Django, Flask, FastAPI, REST API, PostgreSQL, MySQL, AWS (EC2, S3, Lambda), Docker, Kubernetes, Git, CI/CD, Agile, Linux
+
+EXPERIENCE
+Senior Backend Engineer — Innovate Tech Pvt Ltd
+2021 - Present
+- Led a team of 4 engineers to build a microservices platform using Django and FastAPI
+- Designed REST APIs serving 2M+ requests/day, deployed on AWS EC2 with auto-scaling
+- Migrated legacy MySQL system to PostgreSQL, reducing query latency by 40%
+- Set up CI/CD pipelines using GitHub Actions and Docker, cutting deployment time by 60%
+- Mentored 3 junior engineers and conducted code reviews
+
+Backend Developer — CodeWorks Solutions
+2019 - 2021
+- Built and maintained REST APIs in Flask for an e-commerce platform
+- Implemented caching layer reducing average response time by 30%
+- Collaborated with frontend team in an Agile/Scrum environment
+
+EDUCATION
+B.Tech in Computer Science, VIT University — 2019
+
+CERTIFICATIONS
+AWS Certified Solutions Architect – Associate

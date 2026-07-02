@@ -1,0 +1,10 @@
+{
+    "slug": "backend_python_developer",
+    "title": "Backend Python Developer",
+    "jd_text": "Job Title: Backend Python Developer\n\nWe are looking for a Backend Python Developer with 3+ years of experience to join our growing engineering team.\n\nRequirements:\n- 3+ years of experience in Python development\n- Strong experience with Django or Flask\n- Experience building and consuming REST APIs\n- Solid understanding of SQL databases (PostgreSQL preferred)\n- Experience with AWS (EC2, S3, Lambda)\n- Familiarity with Docker and CI/CD pipelines\n- Experience with Git version control\n- Bachelor's degree in Computer Science or related field\n- Strong communication skills and ability to work in an Agile team\n\nNice to have:\n- Experience with FastAPI\n- Exposure to machine learning concepts\n- Experience with Kubernetes\n\nResponsibilities:\n- Design and build scalable backend services\n- Collaborate with frontend engineers to integrate APIs\n- Write clean, tested, maintainable code\n- Participate in code reviews and architecture discussions\n- Mentor junior engineers\n",
+    "mandatory_skills": [
+        "agile"
+    ],
+    "required_years": 3.0,
+    "required_degree": 3
+}

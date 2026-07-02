@@ -1,0 +1,22 @@
+Job Title: Frontend React Developer
+
+We are looking for a Frontend React Developer with 3+ years of experience to design and build rich, user-facing web applications.
+
+Requirements:
+- 3+ years of experience in Frontend web development
+- Strong proficiency in React, TypeScript, and ES6+ JavaScript
+- Deep understanding of HTML5, CSS3, Sass/SCSS, and modern responsive layout systems
+- Experience with Git version control and modern frontend build tools
+- Bachelor's degree in Computer Science, engineering, or related field
+- Strong communication and collaboration skills in an Agile environment
+
+Nice to have:
+- Experience with state management systems like Redux or Zustand
+- Familiarity with REST APIs and GraphQL integrations
+- Exposure to UX/UI design principles
+
+Responsibilities:
+- Build reusable UI components and libraries for future use
+- Optimize frontend web assets for maximum speed and scalability
+- Collaborate with backend engineers to integrate REST/GraphQL APIs
+- Participate in design sprints, code reviews, and Agile team planning

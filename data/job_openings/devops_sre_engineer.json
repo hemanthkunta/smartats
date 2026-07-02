@@ -1,0 +1,10 @@
+{
+    "slug": "devops_sre_engineer",
+    "title": "DevOps SRE Engineer",
+    "jd_text": "Job Title: DevOps SRE Engineer\n\nWe are seeking a DevOps / SRE Engineer with 4+ years of experience to automate, scale, and secure our production infrastructure.\n\nRequirements:\n- 4+ years of experience in DevOps, SRE, or Systems Engineering\n- Strong expertise with containerization tools (Docker) and orchestration (Kubernetes)\n- Experience managing cloud infrastructure on AWS (Amazon Web Services)\n- Proficient in Linux systems administration and scripting\n- Experience building CI/CD pipelines (continuous integration / continuous deployment)\n- Familiarity with version control using Git\n- Bachelor's degree in Computer Science, engineering, or related field\n\nNice to have:\n- Experience with infrastructure as code (Terraform)\n- Monitoring setup (Prometheus, Grafana)\n\nResponsibilities:\n- Maintain uptime, reliability, and security of production services\n- Automate deployment pipelines and cloud infrastructure provisioning\n- Support development teams with containerizing and deploying services\n",
+    "mandatory_skills": [
+        "aws"
+    ],
+    "required_years": 4.0,
+    "required_degree": 3
+}

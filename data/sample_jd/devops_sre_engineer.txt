@@ -1,0 +1,21 @@
+Job Title: DevOps SRE Engineer
+
+We are seeking a DevOps / SRE Engineer with 4+ years of experience to automate, scale, and secure our production infrastructure.
+
+Requirements:
+- 4+ years of experience in DevOps, SRE, or Systems Engineering
+- Strong expertise with containerization tools (Docker) and orchestration (Kubernetes)
+- Experience managing cloud infrastructure on AWS (Amazon Web Services)
+- Proficient in Linux systems administration and scripting
+- Experience building CI/CD pipelines (continuous integration / continuous deployment)
+- Familiarity with version control using Git
+- Bachelor's degree in Computer Science, engineering, or related field
+
+Nice to have:
+- Experience with infrastructure as code (Terraform)
+- Monitoring setup (Prometheus, Grafana)
+
+Responsibilities:
+- Maintain uptime, reliability, and security of production services
+- Automate deployment pipelines and cloud infrastructure provisioning
+- Support development teams with containerizing and deploying services

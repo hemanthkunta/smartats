@@ -1,0 +1,26 @@
+Dr. Neha Patel
+neha.patel@email.com | +91-7777733333 | Pune, India
+
+SUMMARY
+Senior Data Scientist and Machine Learning Researcher with 6 years of experience designing, training, and deploying advanced predictive models and neural networks.
+
+SKILLS
+Python, Machine Learning, TensorFlow, PyTorch, SQL, Pandas, NumPy, Scikit-Learn, Git, AWS, Data Analysis, Communication, leadership
+
+EXPERIENCE
+Principal Data Scientist — NeuralTech AI
+2022 - Present
+- Spearheaded the design and deployment of deep learning models using PyTorch and TensorFlow for predictive diagnostics
+- Led a team of 4 data scientists and data engineers, managing end-to-end ML lifecycles
+- Designed scalable SQL queries to query multi-terabyte data warehouses, reducing data retrieval time by 35%
+- Published research papers on advanced neural network architectures
+
+Data Scientist — InsightData Labs
+2020 - 2022
+- Built customer churn prediction models using Scikit-Learn, Pandas, and NumPy, improving retention by 15%
+- Developed automated data cleaning pipelines and conducted in-depth data analysis for business stakeholders
+- Collaborated with software engineering team to integrate model APIs into production apps
+
+EDUCATION
+PhD in Computer Science (Machine Learning), IISc Bangalore — 2020
+M.Tech in Computer Science, IIT Bombay — 2017

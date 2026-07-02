@@ -1,0 +1,10 @@
+{
+    "slug": "mobile_ios_android_developer",
+    "title": "Mobile iOS/Android Developer",
+    "jd_text": "Job Title: Mobile iOS/Android Developer\n\nWe are seeking a Mobile Developer with 3+ years of experience building responsive, native or cross-platform mobile applications for iOS and Android.\n\nRequirements:\n- 3+ years of experience in mobile application development\n- Proficiency in native languages (Swift for iOS / Kotlin/Java for Android) or cross-platform frameworks (React Native)\n- Solid understanding of mobile UI/UX guidelines and responsive layouts\n- Experience integrating mobile apps with REST APIs and third-party libraries\n- Proficient in version control using Git\n- Bachelor's degree in Computer Science, Engineering, or related field\n\nNice to have:\n- Experience publishing apps to App Store or Google Play\n- Familiarity with CI/CD tools for mobile (e.g., Fastlane)\n\nResponsibilities:\n- Build and maintain high-performance mobile applications for iOS and Android\n- Translate designs and wireframes into high-quality code and layouts\n- Collaborate with backend engineers to integrate APIs and ensure app responsiveness\n",
+    "mandatory_skills": [
+        "ci/cd"
+    ],
+    "required_years": 3.0,
+    "required_degree": 3
+}

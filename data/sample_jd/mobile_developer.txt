@@ -1,0 +1,20 @@
+Job Title: Mobile iOS/Android Developer
+
+We are seeking a Mobile Developer with 3+ years of experience building responsive, native or cross-platform mobile applications for iOS and Android.
+
+Requirements:
+- 3+ years of experience in mobile application development
+- Proficiency in native languages (Swift for iOS / Kotlin/Java for Android) or cross-platform frameworks (React Native)
+- Solid understanding of mobile UI/UX guidelines and responsive layouts
+- Experience integrating mobile apps with REST APIs and third-party libraries
+- Proficient in version control using Git
+- Bachelor's degree in Computer Science, Engineering, or related field
+
+Nice to have:
+- Experience publishing apps to App Store or Google Play
+- Familiarity with CI/CD tools for mobile (e.g., Fastlane)
+
+Responsibilities:
+- Build and maintain high-performance mobile applications for iOS and Android
+- Translate designs and wireframes into high-quality code and layouts
+- Collaborate with backend engineers to integrate APIs and ensure app responsiveness
