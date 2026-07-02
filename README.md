@@ -59,7 +59,7 @@ This adjustment is **bounded to ±10 points** and always shown with its justific
 ## 🛠️ Setup & Run
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/hemanthkunta/smartats.git
 cd smartats
 pip install -r requirements.txt
 streamlit run app.py
