@@ -32,6 +32,15 @@ INDIA_SKILL_ADDITIONS = {
     "entry level": ["fresher", "entry level", "passout", "graduate"]
 }
 
+INDIA_VALIDATION_RULE_ADDITIONS = {
+    "chronology_integrity": ["date order", "chronology", "timeline inversion", "resume timeline"],
+    "duplicate_skill_trap": ["skill repetition", "uniform skill list", "duplicate skills"],
+    "schema_integrity": ["candidate schema", "required keys", "structured validation"],
+    "submission_matrix": ["submission spec", "sample submission", "tracking columns"],
+}
+
+INDIA_TAXONOMY_RULE_SYNONYMS = INDIA_VALIDATION_RULE_ADDITIONS
+
 def normalize_indian_resume_text(text: str) -> str:
     """
     Lowercases the input text and normalizes Hinglish/Indian specific terms:

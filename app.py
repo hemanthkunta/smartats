@@ -16,6 +16,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from typing import Optional
 from parsers.parser import extract_text, extract_candidate_name, extract_contact_info, redact_pii
 from engine.scorer import rank_resumes, route_resumes_to_open_jobs
+from engine.evaluation import (
+    build_submission_matrix,
+    detect_trap_anomalies,
+    load_json_schema,
+    normalize_candidate_record,
+    stream_jsonl_candidates,
+    validate_candidate_record,
+)
 from engine.jobs import save_job_opening, load_all_job_openings, delete_job_opening
 from engine.llm_judge import (
     is_ollama_available,
@@ -548,6 +556,48 @@ def get_sample_resumes() -> list:
     return resumes
 
 
+def load_hackathon_dataset_into_pool() -> int:
+    """Stream the official JSONL dataset into the session pool after validation."""
+    if "resume_pool" not in st.session_state:
+        st.session_state["resume_pool"] = []
+    if "processed_files" not in st.session_state:
+        st.session_state["processed_files"] = set()
+
+    schema = load_json_schema()
+    existing_filenames = {item.get("filename") for item in st.session_state["resume_pool"]}
+    added = 0
+    invalid_rows = 0
+    anomaly_rows = 0
+
+    for index, record in enumerate(stream_jsonl_candidates(), start=1):
+        schema_errors = validate_candidate_record(record, schema)
+        trap_warnings = detect_trap_anomalies(record)
+        if schema_errors:
+            invalid_rows += 1
+            continue
+        if trap_warnings:
+            anomaly_rows += 1
+
+        row = normalize_candidate_record(record, index=index)
+        if not row:
+            invalid_rows += 1
+            continue
+
+        if row["filename"] in existing_filenames:
+            continue
+        st.session_state["resume_pool"].append(row.copy())
+        st.session_state["processed_files"].add(f"hackathon_{row['filename']}")
+        existing_filenames.add(row["filename"])
+        added += 1
+
+    if invalid_rows:
+        st.info(f"Skipped {invalid_rows} malformed dataset rows during streaming validation.")
+    if anomaly_rows:
+        st.warning(f"Detected {anomaly_rows} candidate rows with trap/anomaly signals; they were logged and normalized.")
+
+    return added
+
+
 def extract_graduation_year(text: str) -> Optional[int]:
     """Helper to guess candidate graduation year from resume content (for bias audit)."""
     years = [int(y) for y in re.findall(r"\b(19\d{2}|20[0-2]\d)\b", text)]
@@ -922,6 +972,13 @@ def run_routing_pipeline(anonymize, enable_indian_mode):
             raw_text = item["text"]
             cand_name = item["name"]
             contact = item["contact"]
+
+            validation_payload = item.get("raw_record")
+            if isinstance(validation_payload, dict):
+                validation_errors = validate_candidate_record(validation_payload, schema=load_json_schema())
+                if validation_errors:
+                    st.warning(f"Skipping malformed candidate payload for {cand_name}: {'; '.join(validation_errors)}")
+                    continue
             
             # Apply Indian PII Redaction if Indian Hiring Mode is active
             if enable_indian_mode:
@@ -1047,6 +1104,17 @@ with tab_router:
                 st.rerun()
 
     with col_opts:
+        with st.expander("🧪 Hackathon Evaluation Integration", expanded=False):
+            st.caption("Streams the official JSONL dataset row-by-row, validates schema, and stages records for routing.")
+            if st.button("Load Official Hackathon Dataset", use_container_width=True):
+                loaded_count = load_hackathon_dataset_into_pool()
+                if loaded_count:
+                    st.success(f"Loaded {loaded_count} validated candidate records from the streamed dataset.")
+                    st.session_state["needs_routing"] = True
+                    st.rerun()
+                else:
+                    st.info("No validated records were found in candidates.jsonl.")
+
         use_demo_resumes = st.checkbox(
             "⚡ Load Sample Demo Resumes", 
             value=False, 
@@ -1198,6 +1266,15 @@ with tab_router:
             exp_match = r.get("candidate_years", 0.0) >= min_exp
             if query_match and score_match and exp_match:
                 filtered_ineligible.append(r)
+
+        # Assign independent ranks within each status group so eligible and ineligible lists do not share rank numbers.
+        filtered_eligible = sorted(filtered_eligible, key=lambda x: x.get("final_score", 0.0), reverse=True)
+        for idx, r in enumerate(filtered_eligible, start=1):
+            r["rank"] = idx
+
+        filtered_ineligible = sorted(filtered_ineligible, key=lambda x: x.get("final_score", 0.0), reverse=True)
+        for idx, r in enumerate(filtered_ineligible, start=1):
+            r["rank"] = idx
                 
         # Display top-level metric summaries
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
@@ -1256,15 +1333,15 @@ with tab_router:
             r_copy["status"] = "Ineligible"
             all_candidates.append(r_copy)
             
-        all_candidates.sort(key=lambda x: x.get("final_score", 0.0), reverse=True)
+        all_candidates.sort(key=lambda x: (x.get("status", ""), -x.get("final_score", 0.0)))
         
         all_candidates_csv = []
         for idx, r in enumerate(all_candidates, 1):
             breakdown = r.get("breakdown") or {}
             all_candidates_csv.append({
-                "Rank": idx,
+                "Rank": r.get("rank", idx),
                 "Name": r.get("name", "Unknown"),
-                "Final Score": f"{r.get('final_score', 0.0)}%",
+                "Final Score (%)": f"{r.get('final_score', 0.0)}%",
                 "Matched Role": r.get("best_fit_job_title", "None"),
                 "Skill Match": f"{breakdown.get('skill_score', 0.0)}%",
                 "Experience Match": f"{breakdown.get('experience_score', 0.0)}%",
@@ -1276,7 +1353,7 @@ with tab_router:
             })
             
         if all_candidates_csv:
-            df_all = pd.DataFrame(all_candidates_csv)
+            df_all = build_submission_matrix(all_candidates_csv)
             csv_data_all = df_all.to_csv(index=False).encode("utf-8")
             st.download_button(
                 label="📥 Export All Candidate Results to CSV",
@@ -1360,26 +1437,14 @@ with tab_router:
                                 report_rows.append(f" {icon} **{name}** ({email}): {detail}")
                             st.markdown("\n".join(report_rows))
                 
-                # Group eligible candidates by matched job title
-                grouped_eligible = {}
-                for r in filtered_eligible:
-                    title = r.get("best_fit_job_title", "Unmatched")
-                    if title not in grouped_eligible:
-                        grouped_eligible[title] = []
-                    grouped_eligible[title].append(r)
-                
-                # Sort roles alphabetically
-                for role_title in sorted(grouped_eligible.keys()):
-                    role_cands = grouped_eligible[role_title]
-                    st.markdown(f"#### 💼 {role_title} ({len(role_cands)} Candidates)")
-                    
-                    # Set ranks correctly within the role grouping
-                    for idx, c in enumerate(role_cands, start=1):
-                        c["rank"] = idx
-                        # Define templates for individual card button to read
-                        subj_tmpl = el_subj_template if not anonymized_mode else ""
-                        body_tmpl = el_body_template if not anonymized_mode else ""
-                        render_candidate_card_with_outreach(c, anonymized_mode, f"el_{idx}_{role_title.replace(' ', '_')}", True, subj_tmpl, body_tmpl)
+                # Render eligible candidates as one ranked sequence so the visible order matches rank.
+                eligible_sequence = sorted(filtered_eligible, key=lambda c: c.get("rank", 0))
+                for idx, c in enumerate(eligible_sequence, start=1):
+                    role_title = c.get("best_fit_job_title", "Unmatched")
+                    st.markdown(f"#### #{c.get('rank', idx)} • {c['name']} • {role_title}")
+                    subj_tmpl = el_subj_template if not anonymized_mode else ""
+                    body_tmpl = el_body_template if not anonymized_mode else ""
+                    render_candidate_card_with_outreach(c, anonymized_mode, f"el_{idx}", True, subj_tmpl, body_tmpl)
                         
         with sub_tab_in:
             if not filtered_ineligible:
@@ -1425,7 +1490,6 @@ with tab_router:
                 
                 # List ineligible candidates
                 for idx, c in enumerate(filtered_ineligible, start=1):
-                    c["rank"] = idx
                     subj_tmpl = in_subj_template if not anonymized_mode else ""
                     body_tmpl = in_body_template if not anonymized_mode else ""
                     render_candidate_card_with_outreach(c, anonymized_mode, f"in_{idx}", False, subj_tmpl, body_tmpl)

@@ -75,6 +75,15 @@ SECTION_HEADERS = {
     "summary": ["summary", "objective", "profile", "about me"],
 }
 
+VALIDATION_RULE_SYNONYMS = {
+    "schema_integrity": ["candidate schema", "schema validation", "required fields", "required keys"],
+    "chronology_integrity": ["chronological order", "timeline consistency", "inverted timeline"],
+    "duplicate_skill_trap": ["duplicate skill list", "uniform skill list", "repeated skills"],
+    "submission_matrix": ["sample submission", "validate submission", "csv export"],
+}
+
+TAXONOMY_RULE_SYNONYMS = VALIDATION_RULE_SYNONYMS
+
 DEGREE_LEVELS = {
     "phd": 5, "doctorate": 5,
     "master": 4, "msc": 4, "m.tech": 4, "mba": 4, "ms": 4, "m.s": 4,
