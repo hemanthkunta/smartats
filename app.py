@@ -17,6 +17,7 @@ from typing import Optional
 from parsers.parser import extract_text, extract_candidate_name, extract_contact_info, redact_pii
 from engine.scorer import rank_resumes, route_resumes_to_open_jobs
 from engine.jobs import save_job_opening, load_all_job_openings, delete_job_opening
+from evaluation import load_hackathon_candidate_pool
 from engine.llm_judge import (
     is_ollama_available,
     get_ollama_models,
@@ -911,8 +912,16 @@ def run_routing_pipeline(anonymize, enable_indian_mode):
         return
     
     if not st.session_state.get("resume_pool"):
-        st.info("Candidate pool is empty. Please upload resumes or load demo resumes.")
-        return
+        try:
+            hackathon_candidates = load_hackathon_candidate_pool()
+        except (FileNotFoundError, ValueError):
+            hackathon_candidates = []
+        if hackathon_candidates:
+            st.session_state["resume_pool"] = hackathon_candidates
+            st.session_state["needs_routing"] = True
+        else:
+            st.info("Candidate pool is empty. Please upload resumes or load demo resumes.")
+            return
         
     with st.status("🤖 SmartATS AI Agent: Screening and Auto-Routing Candidates...", expanded=True) as status:
         resumes_to_score = []
@@ -1160,6 +1169,13 @@ with tab_router:
         
         eligible = [flatten_candidate(c) for c in routed["eligible"]]
         ineligible = [flatten_candidate(c) for c in routed["ineligible"]]
+        eligible.sort(key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", "")))
+        ineligible.sort(key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", "")))
+
+        for idx, candidate in enumerate(eligible, start=1):
+            candidate["rank"] = idx
+        for idx, candidate in enumerate(ineligible, start=1):
+            candidate["rank"] = idx
         
         st.markdown("### 🔍 Search & Interactive Filters")
         sf_col1, sf_col2, sf_col3 = st.columns(3)
@@ -1368,15 +1384,19 @@ with tab_router:
                         grouped_eligible[title] = []
                     grouped_eligible[title].append(r)
                 
-                # Sort roles alphabetically
-                for role_title in sorted(grouped_eligible.keys()):
-                    role_cands = grouped_eligible[role_title]
+                # Render role groups in score order while keeping the existing layout intact.
+                ordered_role_titles = sorted(
+                    grouped_eligible.keys(),
+                    key=lambda title: (-max((float(c.get("final_score", 0.0)) for c in grouped_eligible[title]), default=0.0), title),
+                )
+                for role_title in ordered_role_titles:
+                    role_cands = sorted(
+                        grouped_eligible[role_title],
+                        key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", "")),
+                    )
                     st.markdown(f"#### 💼 {role_title} ({len(role_cands)} Candidates)")
-                    
-                    # Set ranks correctly within the role grouping
+
                     for idx, c in enumerate(role_cands, start=1):
-                        c["rank"] = idx
-                        # Define templates for individual card button to read
                         subj_tmpl = el_subj_template if not anonymized_mode else ""
                         body_tmpl = el_body_template if not anonymized_mode else ""
                         render_candidate_card_with_outreach(c, anonymized_mode, f"el_{idx}_{role_title.replace(' ', '_')}", True, subj_tmpl, body_tmpl)
@@ -1424,7 +1444,7 @@ with tab_router:
                             st.markdown("\n".join(report_rows))
                 
                 # List ineligible candidates
-                for idx, c in enumerate(filtered_ineligible, start=1):
+                for idx, c in enumerate(sorted(filtered_ineligible, key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", ""))), start=1):
                     c["rank"] = idx
                     subj_tmpl = in_subj_template if not anonymized_mode else ""
                     body_tmpl = in_body_template if not anonymized_mode else ""
