@@ -355,7 +355,7 @@ def rank_resumes(
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         scored = list(executor.map(score_single, resumes))
 
-    scored.sort(key=lambda x: x["final_score"], reverse=True)
+    scored.sort(key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", "")))
     for i, r in enumerate(scored, start=1):
         r["rank"] = i
     return scored
@@ -435,8 +435,8 @@ def route_resumes_to_open_jobs(
     ineligible_list = [c for c in routed_candidates if not c["is_eligible"]]
 
     # Sort each list by final score
-    eligible_list.sort(key=lambda x: x["final_score"], reverse=True)
-    ineligible_list.sort(key=lambda x: x["final_score"], reverse=True)
+    eligible_list.sort(key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", "")))
+    ineligible_list.sort(key=lambda x: (-float(x.get("final_score", 0.0)), x.get("filename", ""), x.get("name", "")))
 
     return {
         "eligible": eligible_list,
