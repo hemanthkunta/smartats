@@ -73,6 +73,7 @@ App opens at `http://localhost:8501`.
 # Install Ollama: https://ollama.com
 ollama pull llama3.2:1b
 ollama serve
+Also you can use the Gemini or any other llms api keys
 ```
 
 Then toggle "Enable LLM Judge Layer" in the app sidebar.
